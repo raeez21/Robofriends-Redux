@@ -29,11 +29,11 @@ class App extends Component{
         this.props.onRequestRobots()
     }
     render(){
-        const {searchField, onSearchChange, robots,isPending} = this.props
+        const {searchField, onSearchChange, robots, isPending} = this.props
         const filteredRobots = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
-        return isPending ? //if robots lenght is 0
+        return isPending ? //Check if requestRobots is still pending 
         <h1>Loading!!!</h1>: //return this as placeholder
         ( //else proceed normally
                 <div className='tc'>
